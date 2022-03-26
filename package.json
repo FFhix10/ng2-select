@@ -20,7 +20,9 @@
     "pretest": "run-s lint build link",
     "test": "ng test -sr",
     "test-coverage": "ng test -sr -cc",
-    "version": "npm run flow.changelog && git add -A"
+    "version": "npm run flow.changelog && git add -A",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "main": "bundles/ng2-select.umd.js",
   "module": "index.js",
@@ -63,7 +65,7 @@
     "@types/node": "8.0.28",
     "@types/webpack": "3.0.10",
     "bootstrap": "3.3.7",
-    "chokidar-cli": "1.2.0",
+    "chokidar-cli": "2.1.0",
     "classlist-polyfill": "1.0.3",
     "codecov": "3.7.1",
     "codelyzer": "~2.0.0-beta.4",
@@ -81,7 +83,7 @@
     "jasmine-core": "2.8.0",
     "jasmine-data-provider": "2.2.0",
     "jasmine-spec-reporter": "4.2.1",
-    "karma": "1.7.1",
+    "karma": "2.0.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
     "karma-coverage-istanbul-reporter": "^1.2.1",
@@ -90,7 +92,7 @@
     "karma-remap-istanbul": "0.6.0",
     "karma-sauce-launcher": "1.2.0",
     "lite-server": "2.2.2",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "markdown-loader": "^0.1.7",
     "marked": "0.3.6",
     "ng2-page-scroll": "4.0.0-beta.2",
@@ -109,7 +111,7 @@
     "tslint-config-valorsoft": "1.2.0",
     "typedoc": "0.5.5",
     "typescript": "2.4.2",
-    "wallaby-webpack": "0.0.30",
+    "wallaby-webpack": "3.9.8",
     "webdriver-manager": "11.1.1",
     "zone.js": "0.7.5"
   },
@@ -129,5 +131,9 @@
       "email": "otelnov@gmail.com",
       "url": "https://github.com/otelnov"
     }
-  ]
+  ],
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
+  }
 }
